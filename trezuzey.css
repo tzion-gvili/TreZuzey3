@@ -1,0 +1,56 @@
+/* TreZuzey3 – styles for the measures and Aramaic games (on top of style.css) */
+
+.ar { font-size: 30px; font-weight: 900; color: #ffd166; text-shadow: 0 0 18px rgba(255, 209, 102, .35); }
+.answer.ar { font-size: 22px; color: inherit; text-shadow: none; }
+.quiz-q .ar { display: inline-block; }
+.blank { display: inline-block; min-width: 70px; border-bottom: 3px dashed var(--c); color: transparent; margin: 0 4px; }
+.solution small { color: var(--muted); }
+.brand-bolt { font-size: 26px; }
+
+/* typed answers */
+.num-entry input.word-in { width: min(320px, 80vw); font-size: 22px; text-align: center; }
+.num-entry input.word-in::placeholder { color: rgba(255,255,255,.3); font-weight: 500; font-size: 17px; }
+
+/* pairs / memory */
+.pairs { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+.pcard {
+  position: relative; min-height: 84px; padding: 10px; border-radius: 16px; font-size: 18px; font-weight: 700;
+  background: var(--card2); border: 2px solid var(--line); transition: transform .15s, background .2s, border-color .2s, opacity .35s;
+  animation: rise .35s both;
+}
+.pcard.is-a { border-color: color-mix(in srgb, var(--blue) 55%, transparent); font-size: 21px; color: #ffe08a; }
+.pcard.is-b { border-color: color-mix(in srgb, var(--purple) 55%, transparent); }
+.pcard:hover:not(.gone) { transform: translateY(-3px); }
+.pcard.sel { background: color-mix(in srgb, var(--accent) 25%, transparent); border-color: var(--accent); }
+.pcard.gone { opacity: 0; transform: scale(.6); pointer-events: none; }
+.pback { display: none; font-size: 36px; }
+.pairs.memory .pcard:not(.open) .pface { display: none; }
+.pairs.memory .pcard:not(.open) .pback { display: inline; }
+.pairs.memory .pcard:not(.open) { background: linear-gradient(160deg, #39407a, #222655); }
+.pairs.memory .pcard.gone { opacity: .35; transform: none; background: color-mix(in srgb, var(--good) 25%, transparent); }
+.pairs.memory .pcard.gone .pface { display: inline; }
+.pairs.memory .pcard.gone .pback { display: none; }
+
+/* tiles: ladder + proverb builder */
+.wtiles { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 14px 0; }
+.wtile {
+  min-width: 48px; height: 50px; padding: 0 14px; border-radius: 14px; font-size: 21px; font-weight: 800;
+  background: linear-gradient(180deg, #ffe08a, #ffb703); color: #3a2400; box-shadow: 0 4px 0 #c27c00;
+  border: 0; transition: transform .12s, opacity .2s;
+}
+.wtile:hover:not(:disabled) { transform: translateY(-3px); }
+.wtile.used { opacity: .2; }
+.sentence {
+  min-height: 74px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: center;
+  padding: 12px; border-radius: 18px; background: rgba(0,0,0,.25); border: 2px dashed var(--line); margin-top: 8px;
+}
+.sentence .wtile { background: var(--card2); color: #fff; box-shadow: none; border: 2px solid var(--c); }
+.sentence.ar { font-size: inherit; text-shadow: none; }
+.ld-arrow { color: var(--c); font-weight: 900; }
+.placeholder { color: var(--muted); }
+
+@media (max-width: 640px) {
+  .ar { font-size: 24px; }
+  .pairs { grid-template-columns: repeat(2, 1fr); }
+  .wtile { font-size: 18px; height: 46px; }
+}

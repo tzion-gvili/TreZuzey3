@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#151040">
+  <title>TreZuzey3 – מידות, מטבעות וארמית</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="trezuzey.css?v=4">
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="topbar">
+    <button id="homeBtn" class="brand" title="לתפריט הראשי">
+      <span class="brand-bolt">🪙</span>
+      <span class="brand-name">TreZuzey3</span>
+      <small>מידות, מטבעות וארמית</small>
+    </button>
+    <div class="top-actions">
+      <div class="star-total" title="כל הכוכבים שאספתם">⭐ <span id="starTotal">0</span></div>
+      <button id="muteBtn" class="icon-btn" title="צליל">🔊</button>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <footer class="site-footer">
+    <span class="ltr">TgSofts</span> · <a class="ltr" href="tel:0525914007">0525914007</a>
+  </footer>
+
+  <canvas id="fx"></canvas>
+  <div id="toast" class="toast"></div>
+  <div id="modal" class="modal hidden"><div class="modal-card" id="modalCard"></div></div>
+
+  <script src="core.js?v=4"></script>
+  <script src="data.js?v=4"></script>
+  <script src="midot_data.js?v=4"></script>
+  <script src="quiz.js?v=4"></script>
+  <script src="midot.js?v=4"></script>
+  <script src="ladder.js?v=4"></script>
+  <script src="halacha.js?v=4"></script>
+  <script src="chidot.js?v=4"></script>
+  <script src="aramit.js?v=4"></script>
+  <script src="builder.js?v=4"></script>
+  <script src="match.js?v=4"></script>
+  <script src="speed.js?v=4"></script>
+  <script>
+    App.start();
+    document.querySelector('.brand-bolt').textContent = MASCOT.icon;
+  </script>
+</body>
+</html>
